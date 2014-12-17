@@ -1,0 +1,36 @@
+[user]
+	name = username 
+	email = email@example.com
+[merge]
+    summary = true
+    tool = vimdiff
+[diff]
+    renames = copy
+[color]
+	diff = auto
+	status = true
+  	branch = auto
+    interactive = auto
+    ui = auto
+    log = true
+[status]
+    submodulesummary = -1
+[mergetool "vimdiff"]
+   cmd = "vim --noplugin \"$PWD/$MERGED\" \
+          +\":split $PWD/$REMOTE\" +\":set buftype=nowrite\" \
+          +\":vertical diffsplit $PWD/$LOCAL\" +\":set buftype=nowrite\" \
+          +\":vertical diffsplit $PWD/$BASE\" +\":set buftype=nowrite\" \
+          +\":wincmd l\""
+[format]
+    numbered = auto
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+	pu = pull origin master 
+    ps = push origin master 
+    dt = difftool
+    lg = log --stat
+    cp = cherry-pick
+    ca = commit -a
+    br = branch
