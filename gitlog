@@ -1,0 +1,9 @@
+#! /bin/php                                                                                                                         
+<?php
+if (!empty($argv[1])) {
+    $time = strtotime($argv[1]);
+} else {
+    $time = strtotime('today');
+}
+$time = date('Y/m/d H:i:s', $time);
+system("git log --oneline --format='* %s %an' --after=\"{$time}\" --no-merges");
